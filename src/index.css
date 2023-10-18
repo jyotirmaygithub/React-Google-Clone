@@ -1,13 +1,48 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Dela+Gothic+One&family=Kanit:wght@300&family=Tilt+Prism&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+:root {
+  --text-font: "Arvo", serif;
+  --one-font-family: "Tilt Prism", cursive;
+  --two-font-family: "Dela Gothic One", cursive;
+  --third-font-family: "Concert One", cursive;
+  --fourth-font-family: "Kanit", sans-serif;
+  --main-color: #f1c40f;
+  --padding10: 10px;
+  --padding20: 20px;
+  --padding30: 30px;
+  --padding40px : 40px;
+  --padding50 : 50px;
+  --margin10: 10px;
+  --margin20: 20px;
+  --margin30: 30px;
+  --universal-width : 100%;
+}
+.universal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.universal2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.navbar{
+  padding: var(--padding50);
+  justify-content: space-evenly;
+}
+.input-bar{
+  width: 60vw;
+  padding: 10px;
+  border-radius: 20px;
+  outline: none;
+  border: 1px solid black;
 }

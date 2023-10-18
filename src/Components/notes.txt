@@ -1,0 +1,13 @@
+
+description
+: 
+"contain, hold, accommodate mean to have or be capable of having within. contain implies the actual presence of a specified substance or quantity ..."
+position
+: 
+1
+title
+: 
+"Contain Definition & Meaning - Merriam-Webster"
+url
+: 
+"https://www.merriam-webster.com/dictionary/contain"
