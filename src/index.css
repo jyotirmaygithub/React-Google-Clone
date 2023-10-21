@@ -13,7 +13,7 @@
   --two-font-family: "Dela Gothic One", cursive;
   --third-font-family: "Concert One", cursive;
   --fourth-font-family: "Kanit", sans-serif;
-  --main-color: #f1c40f;
+  --link-color : #2E86C1;
   --padding10: 10px;
   --padding20: 20px;
   --padding30: 30px;
@@ -36,8 +36,9 @@
   align-items: center;
 }
 .navbar{
-  padding: var(--padding50);
-  justify-content: space-evenly;
+  padding: var(--padding20);
+  justify-content: left;
+  gap: 5%;
 }
 .input-bar{
   width: 60vw;
@@ -45,4 +46,32 @@
   border-radius: 20px;
   outline: none;
   border: 1px solid black;
+}
+.container{
+  margin: 50px 0px;
+}
+.link-box{
+  padding: 0px 60px;
+}
+.description{
+  color: var(--link-color);
+  font-size:20px;
+}
+.showing-data{
+  padding: 60px 500px 60px 200px;
+}
+.link-box-of-site{
+  justify-content: left;
+}
+.link-box-of-site img:first-child{
+  width: 6%;
+  border-radius: 50%;
+}
+
+.title-des{
+  margin: 10px 0px;
+}
+.title-des h2:first-child{
+  color: var(--link-color);
+  font-style: var(--fourth-font-family);
 }
