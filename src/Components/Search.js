@@ -1,23 +1,24 @@
-import React,{useState} from 'react'
-
+import React, { useContext } from 'react';
+import { WriteValueContext } from "./WriteValueContext";
 
 export default function Search() {
-  const [writvalue,setwritevalue] = useState('')
-  const [permanent, setpermanent] = useState('')
-  function userwriting(e){
-    e.preventDefault()
-    console.log(e.target.value)
+  const { writevalue, setwritevalue } = useContext(WriteValueContext);
+
+  function userwriting(e) {
+    console.log(e.target.value);
     setwritevalue(e.target.value);
   }
-  function writesubmit(e){
-    e.preventDefault()
-    setpermanent(writvalue)
-  }
+
   return (
     <div>
-      <form onSubmit={writesubmit} action="">
-        <input onChange={userwriting} className='input-bar' type="search" name="" id="" />
-      </form>
+      <input
+        onChange={userwriting}
+        className="input-bar"
+        value={writevalue}
+        type="text"
+        name=""
+        id=""
+      />
     </div>
-  )
+  );
 }
