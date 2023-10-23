@@ -11,3 +11,117 @@ title
 url
 : 
 "https://www.merriam-webster.com/dictionary/contain"
+
+Google api key for now - AIzaSyBwDwIJiPOAjMKn-Nae7LFIf5Ur0WFBLLE
+AIzaSyDEzB3GhWOtkizxTrw-usLiQdl5rlVRfP8
+
+google search engine id -c7dab37e91cbc48c8
+
+this api is suitable to generate link regarding data ----- https://www.googleapis.com/customsearch/v1?key=AIzaSyBwDwIJiPOAjMKn-Nae7LFIf5Ur0WFBLLE&cx=c7dab37e91cbc48c8&q=cats
+
+GET https://www.googleapis.com/youtube/v3/search?key=AIzaSyBwDwIJiPOAjMKn-Nae7LFIf5Ur0WFBLLE
+&q=google
+&type=video
+
+
+www.webtutorialnashville.com
+WEB Tutorial {Nashville}
+Welcome to WEB. WEB is a secular homeschool tutorial for middle and high school students.
+
+cacheId
+: 
+"jmBEJgJpNdUJ"
+displayLink
+: 
+"www.w3schools.com"
+formattedUrl
+: 
+"https://www.w3schools.com/html/"
+htmlFormattedUrl
+: 
+"https://www.<b>w3schools</b>.com/html/"
+htmlSnippet
+: 
+"<b>W3Schools</b> is optimized for learning and training. Examples might be simplified to improve reading and learning. ... of all content. While using <b>W3Schools</b>, you&nbsp;..."
+htmlTitle
+: 
+"HTML Tutorial"
+kind
+: 
+"customsearch#result"
+link
+: 
+"https://www.w3schools.com/html/"
+pagemap
+: 
+cse_image
+: 
+[{…}]
+cse_thumbnail
+: 
+[{…}]
+metatags
+: 
+Array(1)
+0
+: 
+msapplication-tilecolor
+: 
+"#00a300"
+og:description
+: 
+"W3Schools offers free online tutorials, references and exercises in all the major languages of the web. Covering popular subjects like HTML, CSS, JavaScript, Python, SQL, Java, and many, many more."
+og:image
+: 
+"https://www.w3schools.com/images/w3schools_logo_436_2.png"
+og:image:height
+: 
+"228"
+og:image:type
+: 
+"image/png"
+og:image:width
+: 
+"436"
+theme-color
+: 
+"#ffffff"
+viewport
+: 
+"width=device-width, initial-scale=1"
+[[Prototype]]
+: 
+Object
+length
+: 
+1
+[[Prototype]]
+: 
+Array(0)
+[[Prototype]]
+: 
+Object
+snippet
+: 
+"W3Schools is optimized for learning and training. Examples might be simplified to improve reading and learning. ... of all content. While using W3Schools, you ..."
+title
+: 
+"HTML Tutorial"
+
+
+
+
+searchInformation
+: 
+formattedSearchTime
+: 
+"0.26"
+formattedTotalResults
+: 
+"14,190,000,000"
+searchTime
+: 
+0.257212
+totalResults
+: 
+"14190000000"

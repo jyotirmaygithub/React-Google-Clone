@@ -60,12 +60,19 @@
 .showing-data{
   padding: 60px 500px 60px 200px;
 }
+.showing-data div:first-child{
+  justify-content: left;
+  margin: 20px 0px;
+  gap: 1%;
+}
 .link-box-of-site{
   justify-content: left;
 }
 .link-box-of-site img:first-child{
-  width: 6%;
-  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  clip-path: circle(50% at 50% 50%);
 }
 
 .title-des{
@@ -74,4 +81,10 @@
 .title-des h2:first-child{
   color: var(--link-color);
   font-style: var(--fourth-font-family);
+}
+.logo{
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  clip-path: circle(50% at 50% 50%);
 }
