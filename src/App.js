@@ -1,14 +1,16 @@
 import React from "react";
 import Navbar from "./Components/Navbar";
 import Dataextract from "./Components/Dataextract";
+import { Searchinputfun } from "./Context/SearchContext";
+import Imagedata from "./Components/Imagedata";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <Navbar/>
-      <Dataextract/>
-    </div>
+    <Searchinputfun>
+      <div className="App">
+        <Navbar />
+        <Imagedata />
+      </div>
+    </Searchinputfun>
   );
 }
-
-export default App;

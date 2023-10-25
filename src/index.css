@@ -23,6 +23,7 @@
   --margin20: 20px;
   --margin30: 30px;
   --universal-width : 100%;
+  --universal-height : 100%;
 }
 .universal {
   display: flex;
@@ -87,4 +88,20 @@
   width: 30px;
   object-fit: cover;
   clip-path: circle(50% at 50% 50%);
+}
+/* -images---- */
+
+.wrapping-images{
+  flex-wrap: wrap;  
+}
+.image-box{
+  height: 40vh;
+  width: 23vw;
+  margin: 10px;
+}
+
+.image-css{
+  height: var(--universal-height);
+  width: var(--universal-width);
+  object-fit: cover;
 }
