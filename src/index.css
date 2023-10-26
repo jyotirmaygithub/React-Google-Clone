@@ -59,7 +59,7 @@
   font-size:20px;
 }
 .showing-data{
-  padding: 60px 500px 60px 200px;
+  padding: 10px 500px 60px 200px;
 }
 .showing-data div:first-child{
   justify-content: left;
@@ -104,4 +104,26 @@
   height: var(--universal-height);
   width: var(--universal-width);
   object-fit: cover;
+}
+
+/* --loader-- */
+.loading-add{
+  width: var(--universal-width);
+  height: 40vh;
+}
+
+/* --links-- */
+.links-of-data{
+  justify-content: start;
+  margin: var(--margin20);
+}
+.link{
+  text-decoration: none;
+}
+
+li{
+  color: black;
+  text-decoration: none;
+  list-style: none;
+  margin: var(--margin20);
 }

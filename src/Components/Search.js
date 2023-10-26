@@ -11,7 +11,7 @@ export default function Search() {
     setuserinput(writvalue)
   }
   return (
-    <div>
+    <div className='search'>
       <form onSubmit={writesubmit}>
         <input value={writvalue} onChange={(e)=>setwritevalue(e.target.value)} className='input-bar' type="search" name="" id="" />
       </form>
