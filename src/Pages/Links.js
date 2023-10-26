@@ -1,28 +1,27 @@
 import React, { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Spinner from "./Loader";
+import Spinner from "../Components/Loader";
 import { UserEntertedInput } from "../Context/SearchContext";
 
-export default function Dataextract() {
+export default function Links() {
   const [dataarray, setdataarray] = useState([]);
   const [searchinfo, setsearchinfo] = useState("");
   const [page, setpage] = useState(1);
   const [loading, setloading] = useState(false);
   const { userinput } = UserEntertedInput();
 
-  let api = "AIzaSyDEzB3GhWOtkizxTrw-usLiQdl5rlVRfP8";
-  let engineoid = "459e8bc0984b24b03";
+  let api = "AIzaSyBwDwIJiPOAjMKn-Nae7LFIf5Ur0WFBLLE";
+  let engineoid = "c7dab37e91cbc48c8";
   let rapidurl;
- 
+
   console.log("this is coming from usecontext = ", userinput);
-  // let check = `https://www.googleapis.com/customsearch/v1?key=${api}&cx=${engineoid}&q=america&start=${page}&searchType=image`
-  // console.log(check)
+
 
   useEffect(() => {
     fetcheddata();
     async function fetcheddata() {
       if (userinput) {
-        // rapidurl =  `https://www.googleapis.com/customsearch/v1?key=${api}&cx=${engineoid}&q=${userinput}a&start=${page}`
+        // rapidurl =  `https://www.googleapis.com/customsearch/v1?key=${api}&cx=${engineoid}&q=${userinput}&start=${page}`
         try {
           let data = await fetch(rapidurl);
           let response = await data.json();
@@ -40,8 +39,8 @@ export default function Dataextract() {
   async function fetchmoredata() {
     setloading(true);
     try {
-      // rapidurl =  `https://www.googleapis.com/customsearch/v1?key=${api}&cx=${engineoid}&q=${userinput}&start=${page + 1}`
-      console.log("what is the value of userinput = ",userinput)
+    //   rapidurl =  `https://www.googleapis.com/customsearch/v1?key=${api}&cx=${engineoid}&q=${userinput}&start=${page + 1}`
+      console.log("what is the value of userinput = ", userinput);
       setpage(page + 1);
       let data = await fetch(rapidurl);
       let response = await data.json();
@@ -55,7 +54,7 @@ export default function Dataextract() {
   }
   return (
     <>
-      <div className="showing-data">
+      <div className="showing-data links-to-show">
         {searchinfo && (
           <div className="universal">
             <h4>About {searchinfo.formattedTotalResults}</h4>
@@ -91,26 +90,7 @@ export default function Dataextract() {
               </div>
             );
           })}
-        </InfiniteScroll>
-        <div className="universal">
-          <h4>searchinfo.formattedTotalResults</h4>
-          <p>searchinfo.searchTime</p>
-        </div>
-        <div className="universal link-box-of-site">
-          
-          <div>
-            <h3>WEB Tutorial Nashville</h3>
-            <h5>www.webtutorialnashville.com</h5>
-          </div>
-        </div>
-        <div className="title-des">
-          <h2>w3 schools where to go ....</h2>
-          <p>
-            W3Schools offers free online tutorials, references and exercises in
-            all the major languages of the web. Covering popular subjects like
-            HTML, CSS, JavaScript, Python, SQL, Ja
-          </p>
-        </div>
+        </InfiniteScroll>   
       </div>
     </>
   );
