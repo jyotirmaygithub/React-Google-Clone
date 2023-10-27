@@ -3,19 +3,22 @@ import { Link } from 'react-router-dom'
 
 export default function Category() {
   return (
+    <>
     <div className=' universal links-of-data'>
       <Link className='link' to="/">
-        <li>Links</li>
+        <li>🔍Links</li>
       </Link>
       <Link className='link' to="/images">
-        <li>Images</li>
+        <li>📷Images</li>
       </Link>
       <Link className='link' to="/news">
-        <li>News</li>
+        <li>🗞️News</li>
       </Link>
       <Link className='link' to="/videos">
-      <li>Videos</li>
+      <li>📽️Videos</li>
       </Link>
     </div>
+      <hr />
+    </>
   )
 }
