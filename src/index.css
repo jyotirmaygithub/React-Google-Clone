@@ -1,5 +1,4 @@
-
-@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Dela+Gothic+One&family=Kanit:wght@300&family=Tilt+Prism&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Roboto+Condensed&display=swap');
 
 * {
   margin: 0;
@@ -9,8 +8,8 @@
 }
 :root {
   --text-font: "Arvo", serif;
-  --one-font-family: "Tilt Prism", cursive;
-  --two-font-family: "Dela Gothic One", cursive;
+  --first-font-family: 'Roboto Condensed', sans-serif;
+  --second-font-family: 'Lora', serif;
   --third-font-family: "Concert One", cursive;
   --fourth-font-family: "Kanit", sans-serif;
   --link-color : #2E86C1;
@@ -42,11 +41,17 @@
   gap: 5%;
 }
 .input-bar{
-  width: 60vw;
+  width: 50vw;
   padding: 10px;
   border-radius: 20px;
   outline: none;
-  border: 1px solid black;
+  border: none;
+  font-size: 15px;
+  box-shadow: 0px 2px 7px 0px gray;
+
+  &:focus{
+    width: 60vw;
+  }
 }
 .container{
   margin: 50px 0px;
@@ -58,13 +63,18 @@
   color: var(--link-color);
   font-size:20px;
 }
-.showing-data{
+.news,.showing-data,.videos{
   padding: 10px 500px 60px 200px;
 }
 .showing-data div:first-child{
   justify-content: left;
-  margin: 20px 0px;
   gap: 1%;
+}
+.search-result{
+  margin: 50px 0px 0px 0px;
+}
+.link-title{
+  font-family: var(--second-font-family);
 }
 .link-box-of-site{
   justify-content: left;
@@ -77,9 +87,9 @@
 }
 
 .title-des{
-  margin: 10px 0px;
+  margin: 5px 0px;
 }
-.title-des h2:first-child{
+.title-des h2:first-child,.news-box div:first-child h2,.videos-box div:first-child h3{
   color: var(--link-color);
   font-style: var(--fourth-font-family);
 }
@@ -98,12 +108,18 @@
   height: 40vh;
   width: 23vw;
   margin: 10px;
+  border-radius: 10px;
+}
+.image-box:hover{
+  cursor: pointer;
+  box-shadow: -1px 4px 13px 0px grey;
 }
 
 .image-css{
   height: var(--universal-height);
   width: var(--universal-width);
   object-fit: cover;
+  border-radius: 10px;
 }
 
 /* --loader-- */
@@ -115,15 +131,32 @@
 /* --links-- */
 .links-of-data{
   justify-content: start;
-  margin: var(--margin20);
 }
 .link{
   text-decoration: none;
+  color: black;
+}
+.hover-link .title-des h2:hover,.news-box div:first-child h3:hover,.videos-box div:first-child h3:hover{
+  text-decoration: underline;
 }
 
 li{
   color: black;
   text-decoration: none;
   list-style: none;
+  margin: 5px 20px;
+}
+/* --news */
+.news-box,.videos-box {
+  justify-content: space-between;
   margin: var(--margin20);
+  gap: 5%;
+}
+.news-image-box,.video-image-box{
+  height: 18vh;
+}
+.news-image-box img:first-child,.video-image-box img:first-child{
+  height: var(--universal-height);
+  object-fit: contain;
+  border-radius: 10px;
 }

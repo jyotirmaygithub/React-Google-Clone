@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Spinner from "../Components/Loader";
+import Subsitute from "../pictures/subimage.png";
 import { UserEntertedInput } from "../Context/SearchContext";
+import { Link } from "react-router-dom";
 
 export default function Links() {
   const [dataarray, setdataarray] = useState([]);
@@ -10,23 +12,18 @@ export default function Links() {
   const [loading, setloading] = useState(false);
   const { userinput } = UserEntertedInput();
 
-  let api = "AIzaSyBwDwIJiPOAjMKn-Nae7LFIf5Ur0WFBLLE";
-  let engineoid = "c7dab37e91cbc48c8";
+  let api =  process.env.React_App_first_search_api;
+  let engineoid = process.env.React_App_first_search_engine;
   let rapidurl;
-
-  console.log("this is coming from usecontext = ", userinput);
-
 
   useEffect(() => {
     fetcheddata();
     async function fetcheddata() {
       if (userinput) {
-        // rapidurl =  `https://www.googleapis.com/customsearch/v1?key=${api}&cx=${engineoid}&q=${userinput}&start=${page}`
+        rapidurl = `https://www.googleapis.com/customsearch/v1?key=${api}&cx=${engineoid}&q=${userinput}&start=${page}`;
         try {
           let data = await fetch(rapidurl);
           let response = await data.json();
-          console.log(response);
-          console.log(response.searchInformation);
           setsearchinfo(response.searchInformation);
           setdataarray(response.items);
         } catch (error) {
@@ -39,14 +36,13 @@ export default function Links() {
   async function fetchmoredata() {
     setloading(true);
     try {
-    //   rapidurl =  `https://www.googleapis.com/customsearch/v1?key=${api}&cx=${engineoid}&q=${userinput}&start=${page + 1}`
-      console.log("what is the value of userinput = ", userinput);
+      rapidurl = `https://www.googleapis.com/customsearch/v1?key=${api}&cx=${engineoid}&q=${userinput}&start=${
+        page + 1
+      }`;
       setpage(page + 1);
       let data = await fetch(rapidurl);
       let response = await data.json();
-      console.log("this is the new page data = ", response.items);
       setdataarray(dataarray.concat(response.items));
-      console.log("this is total data", dataarray);
       setloading(false);
     } catch (error) {
       console.log("unable to fetch data");
@@ -56,13 +52,12 @@ export default function Links() {
     <>
       <div className="showing-data links-to-show">
         {searchinfo && (
-          <div className="universal">
+          <div className="universal search-result ">
             <h4>About {searchinfo.formattedTotalResults}</h4>
             <p>results {searchinfo.searchTime}</p>
           </div>
         )}
         <InfiniteScroll
-          // className="universal big-box-add"
           dataLength={dataarray.length}
           next={fetchmoredata}
           hasMore={true}
@@ -71,26 +66,30 @@ export default function Links() {
         >
           {loading && <Spinner />}
           {dataarray.map((e, index) => {
-            let { pagemap, title, displayLink, snippet } = e;
+            let { pagemap, formattedUrl, title, displayLink, snippet } = e;
             return (
               <div key={index} className="container">
-                <div className="universal link-box-of-site">
-                  {pagemap && (
-                    <img src={pagemap.metatags[0]["og:image"]} alt="" />
-                  )}
-                  <div>
-                    <h3>{title}</h3>
-                    <h5>{displayLink}</h5>
+                <Link className="link hover-link" target="_blank" to={formattedUrl}>
+                  <div className="universal link-box-of-site">
+                    {pagemap.metatags[0]["og:image"] ? (
+                      <img src={pagemap.metatags[0]["og:image"]} alt="" />
+                    ) : (
+                      <img src={Subsitute} alt="" />
+                    )}
+                    <div>
+                      <h3 className="link-title">{title}</h3>
+                      <h5>{displayLink}</h5>
+                    </div>
                   </div>
-                </div>
-                <div className="title-des">
-                  <h2>{snippet.split(" ").splice(0, 6).join(" ")} ...</h2>
-                  {pagemap && <p>{pagemap.metatags[0]["og:description"]}</p>}
-                </div>
+                  <div className="title-des">
+                    <h2>{snippet.split(" ").splice(0, 6).join(" ")} ...</h2>
+                    {pagemap && <p>{pagemap.metatags[0]["og:description"]}</p>}
+                  </div>
+                </Link>
               </div>
             );
           })}
-        </InfiniteScroll>   
+        </InfiniteScroll>
       </div>
     </>
   );
