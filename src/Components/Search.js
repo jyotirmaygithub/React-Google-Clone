@@ -13,7 +13,7 @@ export default function Search() {
   return (
     <div className='search'>
       <form onSubmit={writesubmit}>
-        <input value={writvalue} onChange={(e)=>setwritevalue(e.target.value)} className='input-bar' type="search" name="" id="" />
+        <input value={writvalue} placeholder='Search or type URL' onChange={(e)=>setwritevalue(e.target.value)} className='input-bar' type="search" name="" id="" />
       </form>
     </div>
   )

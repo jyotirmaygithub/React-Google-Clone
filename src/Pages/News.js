@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { UserEntertedInput } from "../Context/SearchContext";
 import { Link } from "react-router-dom";
+import Loader from "../Components/Loader";
 
 export default function News() {
   const { userinput } = UserEntertedInput();
   const [dataarray, setdataarray] = useState([]);
+  const  [loading, setloading]  = useState(false)
   const [moredata, setmoredata] = useState([]);
 
   const apikey = process.env.React_App_news_api
@@ -19,10 +21,12 @@ export default function News() {
     fetchdata();
     async function fetchdata() {
       if (userinput) {
+        setloading(true)
         try {
           let data = await fetch(api);
           let response = await data.json();
           setdataarray(response.articles);
+          setloading(false)
         } catch (error) {
           console.log("unable to fetch data");
         }
@@ -45,12 +49,13 @@ export default function News() {
   }
   return (
     <>
-      <div className="news">
+    {loading && <Loader/>}
+     {loading === false && <div className="news">
         {moredata.map((e) => {
           let { description, title, url, urlToImage } = e;
           return (
-            <Link className="link" target="_blank" to={url}>
-              <div className="universal news-box">
+            <div className=" news-box">
+                {url  && url !== "https://removed.com" ? <Link className="link universal news-box" target="_blank" to={url}>
                 <div>
                   <h2>{title}</h2>
                   <p>{description}</p>
@@ -58,11 +63,11 @@ export default function News() {
                 <div className="news-image-box">
                   <img src={urlToImage} alt="" />
                 </div>
+            </Link> : ' '}
               </div>
-            </Link>
           );
         })}
-      </div>
+      </div>}
     </>
   );
 }

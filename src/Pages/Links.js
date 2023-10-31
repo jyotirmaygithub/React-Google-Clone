@@ -12,8 +12,8 @@ export default function Links() {
   const [loading, setloading] = useState(false);
   const { userinput } = UserEntertedInput();
 
-  let api =  process.env.React_App_first_search_api;
-  let engineoid = process.env.React_App_first_search_engine;
+  let api =  process.env.React_App_first_search_api
+  let engineoid = process.env.React_App_first_search_engine
   let rapidurl;
 
   useEffect(() => {
@@ -37,9 +37,9 @@ export default function Links() {
     setloading(true);
     try {
       rapidurl = `https://www.googleapis.com/customsearch/v1?key=${api}&cx=${engineoid}&q=${userinput}&start=${
-        page + 1
+        page + 11
       }`;
-      setpage(page + 1);
+      setpage(page + 11);
       let data = await fetch(rapidurl);
       let response = await data.json();
       setdataarray(dataarray.concat(response.items));
@@ -69,9 +69,9 @@ export default function Links() {
             let { pagemap, formattedUrl, title, displayLink, snippet } = e;
             return (
               <div key={index} className="container">
-                <Link className="link hover-link" target="_blank" to={formattedUrl}>
+               {formattedUrl ? <Link className="link hover-link" target="_blank" to={formattedUrl}>
                   <div className="universal link-box-of-site">
-                    {pagemap.metatags[0]["og:image"] ? (
+                    {pagemap && pagemap.metatags && pagemap.metatags[0] && pagemap.metatags[0]["og:image"] ? (
                       <img src={pagemap.metatags[0]["og:image"]} alt="" />
                     ) : (
                       <img src={Subsitute} alt="" />
@@ -82,10 +82,10 @@ export default function Links() {
                     </div>
                   </div>
                   <div className="title-des">
-                    <h2>{snippet.split(" ").splice(0, 6).join(" ")} ...</h2>
-                    {pagemap && <p>{pagemap.metatags[0]["og:description"]}</p>}
+                    {snippet ? <h2 className="link-heading">{snippet.split(" ").splice(0, 6).join(" ")}...</h2> : '' }
+                    {pagemap && pagemap.metatags && pagemap.metatags[0] &&  pagemap.metatags[0["og:description"]] ? <p>{pagemap.metatags[0]["og:description"]}</p> : ''}
                   </div>
-                </Link>
+                </Link> : ''}
               </div>
             );
           })}
