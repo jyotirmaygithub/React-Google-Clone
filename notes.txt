@@ -1,0 +1,53 @@
+displayLink
+: 
+"centerforgreatapes.org"
+fileFormat
+: 
+"image/jpeg"
+htmlSnippet
+: 
+"About <b>Apes</b> - Center for Great <b>Apes</b>"
+htmlTitle
+: 
+"About <b>Apes</b> - Center for Great <b>Apes</b>"
+image
+: 
+byteSize
+: 
+905911
+contextLink
+: 
+"https://centerforgreatapes.org/about-apes/"
+height
+: 
+1537
+thumbnailHeight
+: 
+113
+thumbnailLink
+: 
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUgS84mmD5ydONng3GxOb9__rDD9cQq1zgHm-wG5nLqzYCgCJ_FS-v92w&s"
+thumbnailWidth
+: 
+150
+width
+: 
+2049
+[[Prototype]]
+: 
+Object
+kind
+: 
+"customsearch#result"
+link
+: 
+"https://centerforgreatapes.org/wp-content/uploads/2021/03/IMG_02381.jpg"
+mime
+: 
+"image/jpeg"
+snippet
+: 
+"About Apes - Center for Great Apes"
+title
+: 
+"About Apes - Center for Great Apes"

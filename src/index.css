@@ -224,3 +224,8 @@ li {
 .addfunc{
   gap: 25%;
 }
+/* suggestion box */
+.suggestions{
+  cursor: pointer;
+  line-height: 2;
+}

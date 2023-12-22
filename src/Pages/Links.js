@@ -26,6 +26,7 @@ export default function Links() {
           let response = await data.json();
           setsearchinfo(response.searchInformation);
           setdataarray(response.items);
+          console.log(response.items)
         } catch (error) {
           console.log("not able to fetch data");
         }

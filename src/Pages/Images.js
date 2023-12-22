@@ -81,10 +81,10 @@ export default function Imagedata() {
           >
             {loading && <Loader />}
             {imagedata &&
-              imagedata.map((e) => {
+              imagedata.map((e,index) => {
                 let { link, title, image } = e;
                 return link ? (
-                  <div className="image-box">
+                  <div className="image-box" key={index}>
                     <img
                       className="image-css"
                       onClick={() => fullview(link, title, image)}
