@@ -1,6 +1,6 @@
 import React from "react";
-import Weather from "../pictures/cloud_FILL0_wght400_GRAD0_opsz24.png";
-import todo from "../pictures/things_to_do_FILL0_wght400_GRAD0_opsz24.png";
+import Weather from "../pictures/cloud.svg"
+import todo from "../pictures/todo.svg";
 
 export default function Addfunc() {
   return (
