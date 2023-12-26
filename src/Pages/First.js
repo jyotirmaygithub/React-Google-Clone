@@ -4,7 +4,7 @@ import Search from '../Components/Search'
 
 export default function First() {
   return (
-    <div>
+    <div className='flex items-center justify-center'>
       <Heading/>
       <Search/>
     </div>

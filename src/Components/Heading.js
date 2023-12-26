@@ -3,9 +3,9 @@ import Logo from '../pictures/searcherlogo.png'
 
 export default function Heading() {
   return (
-    <div className='universal heading'>
+    <div className='fixed left-7 flex space-x-1'>
       <img src={Logo} alt="" />
-      <h2>Searcher</h2>
+      <h2 className='font-bold'>Searcher</h2>
     </div>
   )
 }
