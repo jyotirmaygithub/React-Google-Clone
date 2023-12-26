@@ -219,9 +219,6 @@ li {
   object-fit: contain;
   border-radius: 10px;
 }
-.addfunc{
-  gap: 25%;
-}
 /* suggestion box */
 .suggestions{
   cursor: pointer;
