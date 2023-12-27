@@ -58,9 +58,6 @@
     width: 52vw;
   }
 }
-.container {
-  margin: 50px 0px;
-}
 .link-box {
   padding: 0px 60px;
 }
@@ -77,9 +74,7 @@
   justify-content: left;
   gap: 1%;
 }
-.search-result {
-  margin: 50px 0px 0px 0px;
-}
+
 .link-title {
   font-family: var(--second-font-family);
 }
@@ -183,10 +178,6 @@
 .links-of-data {
   justify-content: start;
   margin: 95px 0px 0px 0px;
-}
-.link {
-  text-decoration: none;
-  color: black;
 }
 .hover-link .title-des h2:hover,
 .news-box div:first-child h2:hover,

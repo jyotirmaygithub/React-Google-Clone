@@ -26,7 +26,6 @@ export default function Links() {
           let response = await data.json();
           setsearchinfo(response.searchInformation);
           setdataarray(response.items);
-          console.log(response.items)
         } catch (error) {
           console.log("not able to fetch data");
         }
@@ -51,12 +50,12 @@ export default function Links() {
   }
   return (
     <>
-      <div className="showing-data links-to-show">
+      <div className="px-24">
         {searchinfo && (
-          <div className="universal search-result ">
+          <div className="flex space-x-2 mt-5">
             <h4>About {searchinfo.formattedTotalResults}</h4>
             <p>results {searchinfo.searchTime}</p>
-          </div>
+          </div>// removing showing data classs reconsider it 
         )}
         <InfiniteScroll
           dataLength={dataarray.length}
@@ -69,7 +68,7 @@ export default function Links() {
           {dataarray.map((e, index) => {
             let { pagemap, formattedUrl, title, displayLink, snippet } = e;
             return (
-              <div key={index} className="container">
+              <div key={index} className="my-8">
                {formattedUrl ? <Link className="link hover-link" target="_blank" to={formattedUrl}>
                   <div className="universal link-box-of-site">
                     {pagemap && pagemap.metatags && pagemap.metatags[0] && pagemap.metatags[0]["og:image"] ? (
