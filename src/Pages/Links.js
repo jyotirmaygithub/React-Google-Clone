@@ -50,7 +50,7 @@ export default function Links() {
   }
   return (
     <>
-      <div className="px-24">
+      <div className="pl-40">
         {searchinfo && (
           <div className="flex space-x-2 mt-5">
             <h4>About {searchinfo.formattedTotalResults}</h4>
@@ -68,21 +68,21 @@ export default function Links() {
           {dataarray.map((e, index) => {
             let { pagemap, formattedUrl, title, displayLink, snippet } = e;
             return (
-              <div key={index} className="my-8">
-               {formattedUrl ? <Link className="link hover-link" target="_blank" to={formattedUrl}>
-                  <div className="universal link-box-of-site">
+              <div key={index} className="my-10">
+               {formattedUrl ? <Link className=" hover-link" target="_blank" to={formattedUrl}>
+                  <div className="flex justify-center items-center space-x-2 link-box-of-site">
                     {pagemap && pagemap.metatags && pagemap.metatags[0] && pagemap.metatags[0]["og:image"] ? (
                       <img src={pagemap.metatags[0]["og:image"]} alt="" />
                     ) : (
                       <img src={Subsitute} alt="" />
                     )}
                     <div>
-                      <h3 className="link-title">{title}</h3>
+                      <h3 className="text-[20px] font-[600]">{title}</h3>
                       <h5>{displayLink}</h5>
                     </div>
                   </div>
-                  <div className="title-des">
-                    {snippet ? <h2 className="link-heading">{snippet.split(" ").splice(0, 6).join(" ")}...</h2> : '' }
+                  <div className="title-des font-[600]">
+                    {snippet ? <h2>{snippet.split(" ").splice(0, 6).join(" ")}...</h2> : '' }
                     {pagemap && pagemap.metatags && pagemap.metatags[0] &&  pagemap.metatags[0["og:description"]] ? <p>{pagemap.metatags[0]["og:description"]}</p> : ''}
                   </div>
                 </Link> : ''}

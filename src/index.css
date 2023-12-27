@@ -4,12 +4,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Lora&family=Roboto+Condensed&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-  box-sizing: border-box;
-}
 :root {
   --text-font: "Arvo", serif;
   --first-font-family: "Roboto Condensed", sans-serif;
@@ -17,16 +11,6 @@
   --third-font-family: "Concert One", cursive;
   --fourth-font-family: "Kanit", sans-serif;
   --link-color: #2e86c1;
-  --padding10: 10px;
-  --padding20: 20px;
-  --padding30: 30px;
-  --padding40px: 40px;
-  --padding50: 50px;
-  --margin10: 10px;
-  --margin20: 20px;
-  --margin30: 30px;
-  --universal-width: 100%;
-  --universal-height: 100%;
 }
 .universal {
   display: flex;
@@ -73,10 +57,6 @@
 .showing-data div:first-child {
   justify-content: left;
   gap: 1%;
-}
-
-.link-title {
-  font-family: var(--second-font-family);
 }
 .link-box-of-site {
   justify-content: left;
