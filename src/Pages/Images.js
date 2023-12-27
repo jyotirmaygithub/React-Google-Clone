@@ -15,8 +15,8 @@ export default function Imagedata() {
   const [holdertitle, setholdertitle] = useState("");
   const [holderlink, setholderlink] = useState("");
 
-  let api = process.env.React_App_first_search_api
-  let engineoid = process.env.React_App_first_search_engine
+  let api = process.env.React_App_First_Search_Api
+  let engineoid = process.env.React_App_First_Search_Engine
   let rapidurl;
 
   useEffect(() => {
@@ -54,9 +54,6 @@ export default function Imagedata() {
   }
 
   function fullview(link, title, image) {
-    console.log(link);
-    console.log(title);
-    console.log(image.contextLink);
     setmodal(true);
     setimagehold(link);
     setholdertitle(title);
@@ -67,7 +64,7 @@ export default function Imagedata() {
   }
   return (
     <>
-      <div className="universal images-to-show">
+      <div className="flex items-center justify-center">
         <div>
           <InfiniteScroll
             className={
@@ -84,9 +81,9 @@ export default function Imagedata() {
               imagedata.map((e,index) => {
                 let { link, title, image } = e;
                 return link ? (
-                  <div className="image-box" key={index}>
+                  <div className="h-[40vh] w-[23vw] m-[10px] rounded image-box" key={index}>
                     <img
-                      className="image-css"
+                      className="h-full w-full object-cover rounded "
                       onClick={() => fullview(link, title, image)}
                       src={link}
                       alt={title}
@@ -99,14 +96,14 @@ export default function Imagedata() {
           </InfiniteScroll>
         </div>
         {modal && (
-          <div className="universal another-box">
+          <div className="flex justify-centre items-center w-full another-box">
             <div className="universal inside-another-box">
               <img src={Close} style={{cursor : 'pointer'}} onClick={closefullview} alt="" />
               <Link target="_blank" to={holderlink} className="universal link link-images-add ">
                 <div>
                   <img src={imagehold} alt="" />
                 </div>
-                <div>
+                <div className="m-4 pl-10">
                   <h2>{holdertitle} </h2>
                   <p>{holderlink.split(" ").splice(0, 5).join(" ")} </p>
                 </div>
