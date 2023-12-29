@@ -7,7 +7,7 @@ import Suggestions from './Suggestions'
 export default function Navbar() {
   return (
     <>
-    <div className='universal navbar'>
+    <div className='flex justify-evenly items-center w-full bg-white'>
       <Logo/>
       <Search/>
       <Addfunc/>

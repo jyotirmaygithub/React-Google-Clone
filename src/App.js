@@ -6,7 +6,6 @@ import Links from "./Pages/Links";
 import Imagedata from "./Pages/Images";
 import News from "./Pages/News";
 import Video from "./Pages/Videos";
-import First from "./Pages/First"
 import Suggestions from "./Components/Suggestions";
 import { UserEntertedInput } from "./Context/SearchContext";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";

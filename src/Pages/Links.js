@@ -55,7 +55,7 @@ export default function Links() {
           <div className="flex space-x-2 mt-5">
             <h4>About {searchinfo.formattedTotalResults}</h4>
             <p>results {searchinfo.searchTime}</p>
-          </div>// removing showing data classs reconsider it 
+          </div>
         )}
         <InfiniteScroll
           dataLength={dataarray.length}
