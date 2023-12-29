@@ -50,18 +50,18 @@ export default function News() {
   return (
     <>
     {loading && <Loader/>}
-     {loading === false && <div className="px-20 py-5">
+     {loading === false && <div className="px-52 py-12">
         {moredata.map((e) => {
           let { description, title, url, urlToImage } = e;
           return (
-            <div className=" news-box">
-                {url  && url !== "https://removed.com" ? <Link className="link universal news-box" target="_blank" to={url}>
-                <div>
-                  <h2>{title}</h2>
+            <div className="my-10 space-x-4">
+                {url  && url !== "https://removed.com" ? <Link className="flex justify-between items-center news-box space-x-10" target="_blank" to={url}>
+                <div className="w-[50vw]">
+                  <h2 className="text-[20px] font-[600]">{title}</h2>
                   <p>{description}</p>
                 </div>
-                <div className="news-image-box">
-                  <img src={urlToImage} alt="" />
+                <div className="w-[20vw]">
+                  <img className="rounded-lg" src={urlToImage} alt="" />
                 </div>
             </Link> : ' '}
               </div>

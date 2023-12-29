@@ -54,10 +54,10 @@
 .videos {
   padding: 10px 500px 60px 200px;
 }
-.showing-data div:first-child {
+/* .showing-data div:first-child {
   justify-content: left;
   gap: 1%;
-}
+} */
 .link-box-of-site {
   justify-content: left;
 }
@@ -150,14 +150,11 @@ li {
   margin: 5px 20px;
   font-family: cursive;
 }
-/* --news */
-.news-box,
 .videos-box {
   justify-content: space-between;
   margin: var(--margin20);
   gap: 5%;
 }
-.news-image-box img:first-child,
 .video-image-box img:first-child {
   height: var(--universal-height);
   object-fit: contain;
