@@ -12,8 +12,8 @@ export default function Links() {
   const [loading, setloading] = useState(false);
   const { userinput } = UserEntertedInput();
 
-  let api =  process.env.React_App_first_search_api
-  let engineoid = process.env.React_App_first_search_engine
+  let api =  process.env.React_App_First_Search_Api
+  let engineoid = process.env.React_App_First_Search_Engine
   let rapidurl;
 
   useEffect(() => {

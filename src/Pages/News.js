@@ -9,7 +9,7 @@ export default function News() {
   const  [loading, setloading]  = useState(false)
   const [moredata, setmoredata] = useState([]);
 
-  const apikey = process.env.React_App_news_api
+  const apikey = process.env.React_App_News_Api
   let api;
   let api2;
   const cate1 = "top-headlines";
@@ -50,7 +50,7 @@ export default function News() {
   return (
     <>
     {loading && <Loader/>}
-     {loading === false && <div className="news">
+     {loading === false && <div className="px-20 py-5">
         {moredata.map((e) => {
           let { description, title, url, urlToImage } = e;
           return (
