@@ -3,7 +3,7 @@ import Spinner from "../pictures/loading.gif"
 
 export default function Loader() {
   return (
-    <div className='universal loading-add'>
+    <div className='flex justify-center items-center h-[40vh] w-full'>
       <img src={Spinner} alt="" />
     </div>
   )
