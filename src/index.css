@@ -119,8 +119,3 @@ li {
   margin: 5px 20px;
   font-family: cursive;
 }
-/* suggestion box */
-.suggestions{
-  cursor: pointer;
-  line-height: 2;
-}
