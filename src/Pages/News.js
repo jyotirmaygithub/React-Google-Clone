@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { UserEntertedInput } from "../Context/SearchContext";
 import { Link } from "react-router-dom";
 import Loader from "../Components/Loader";
+import ScrollTop from "../Components/scrollTopBtn"
 
 export default function News() {
   const { userinput } = UserEntertedInput();
@@ -50,6 +51,7 @@ export default function News() {
   return (
     <>
     {loading && <Loader/>}
+    <ScrollTop/>
      {loading === false && <div className="px-52 py-12">
         {moredata.map((e) => {
           let { description, title, url, urlToImage } = e;

@@ -4,6 +4,7 @@ import { UserEntertedInput } from "../Context/SearchContext";
 import Loader from "../Components/Loader";
 import { Link } from "react-router-dom";
 import Close from "../pictures/close.png";
+import ScrollTop from "../Components/scrollTopBtn"
 
 export default function Imagedata() {
   const { userinput } = UserEntertedInput();
@@ -64,6 +65,7 @@ export default function Imagedata() {
   }
   return (
     <>
+    <ScrollTop/>
       <div className="flex items-center justify-center">
         <div>
           <InfiniteScroll
