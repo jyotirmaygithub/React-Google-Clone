@@ -4,6 +4,8 @@ import Spinner from "../Components/Loader";
 import Subsitute from "../pictures/subimage.png";
 import { UserEntertedInput } from "../Context/SearchContext";
 import { Link } from "react-router-dom";
+import ScrollTop from "../Components/scrollTopBtn"
+
 
 export default function Links() {
   const [dataarray, setdataarray] = useState([]);
@@ -50,6 +52,7 @@ export default function Links() {
   }
   return (
     <>
+    <ScrollTop/>
       <div className="pl-40">
         {searchinfo && (
           <div className="flex space-x-2 mt-5">
@@ -89,6 +92,7 @@ export default function Links() {
               </div>
             );
           })}
+          
         </InfiniteScroll>
       </div>
     </>

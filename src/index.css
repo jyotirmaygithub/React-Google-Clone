@@ -23,18 +23,6 @@
   justify-content: center;
   align-items: center;
 }
-/* .navbar {
-  padding: var(--padding20);
-  justify-content: space-evenly;
-  gap: 5%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  background: white;
-} */
-
 .input-bar {
   box-shadow: 0px 2px 7px 0px gray;
 
@@ -117,16 +105,6 @@
   line-height: 1.5;
 }
 /* --loader-- */
-/* .loading-add {
-  width: var(--universal-width);
-  height: 40vh;
-} */
-
-/* --links-- */
-/* .links-of-data {
-  justify-content: start;
-  margin: 95px 0px 0px 0px;
-} */
 .hover-link .title-des h2:hover,
 .news-box div:first-child h2:hover,
 .videos-box div:first-child h3:hover,

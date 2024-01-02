@@ -3,6 +3,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Loader from "../Components/Loader";
 import { UserEntertedInput } from "../Context/SearchContext";
 import { Link } from "react-router-dom";
+import ScrollTop from "../Components/scrollTopBtn"
 
 export default function Videos() {
   const { userinput } = UserEntertedInput();
@@ -46,6 +47,7 @@ export default function Videos() {
   return (
     <>
     {onetime && <Loader/>}
+    <ScrollTop/>
     {onetime === false && <div className="px-52 py-12">
       <InfiniteScroll
         dataLength={videodata.length}
