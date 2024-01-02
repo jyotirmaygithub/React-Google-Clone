@@ -7,23 +7,19 @@ export default function Suggestions(props) {
   const { userinput ,setuserinput } = UserEntertedInput();
   let { suggest } = props;
 
-  let api = process.env.React_App_first_search_api;
-  let engineoid = process.env.React_App_first_search_engine;
+  let api = process.env.React_App_First_Search_Api;
+  let engineoid = process.env.React_App_First_Search_Engine;
   let rapidurl;
 
   useEffect(() => {
     if (userinput) {
-      console.log("this one is working")
       fetcheddata();
       async function fetcheddata() {
         rapidurl = `https://www.googleapis.com/customsearch/v1?key=${api}&cx=${engineoid}&q=${userinput}&start=1`;
-        console.log(rapidurl);
         try {
           let data = await fetch(rapidurl);
           let response = await data.json();
-          console.log(response);
           setrecommends(response.items);
-          console.log(response.items);
         } catch (error) {
           console.log("not able to fetch data");
         }
@@ -34,11 +30,11 @@ export default function Suggestions(props) {
   return (
     <>
       {display && (
-        <div className="suggestion-box">
+        <div className="fixed bg-white top-[55px] left-[150px] px-10 py-5 w-[50vw] z-10 border-b border-l border-r border-black">
           {recommends.map((e, index) => {
             let { title } = e;
             return (
-              <div className="suggestions" key={index}>
+              <div className="cursor-pointer leading-[2] suggestions" key={index}>
                 <p
                   onClick={() => {
                     setuserinput(title)
