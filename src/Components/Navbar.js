@@ -10,6 +10,7 @@ export default function Navbar() {
     <div className='flex justify-evenly items-center w-full bg-white'>
       <Logo/>
       <Search/>
+      {/* <Suggestions/> */}
       <Addfunc/>
     </div>
     </>
