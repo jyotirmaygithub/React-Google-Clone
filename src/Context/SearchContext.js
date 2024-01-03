@@ -4,8 +4,9 @@ const SearchInput = createContext();
 
 export function Searchinputfun(props) { // Use "props" instead of "{ Children }"
   const [userinput, setuserinput] = useState('');
+  const [searchTerm ,setsearchTerm] = useState('')
   return (
-    <SearchInput.Provider value={{ userinput, setuserinput }}>
+    <SearchInput.Provider value={{ userinput, setuserinput, searchTerm,setsearchTerm }}>
       {props.children}
     </SearchInput.Provider>
   );
