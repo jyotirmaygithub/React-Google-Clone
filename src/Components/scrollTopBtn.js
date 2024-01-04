@@ -28,7 +28,7 @@ export default function TopBtn() {
     return (
       <div>
         {isVisible && (
-          <button onClick={scrollToTop} className="bg-black rounded fixed bottom-20 right-10 p-1 cursor-pointer z-3">
+          <button onClick={scrollToTop} className="bg-black rounded fixed bottom-20 right-10 p-1 cursor-pointer z-50">
             <img className='h-[60px] bg-white' src={upArrow} alt="" />
           </button>
         )}
