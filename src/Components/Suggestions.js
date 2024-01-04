@@ -3,7 +3,7 @@ import { UserEntertedInput } from "../Context/SearchContext";
 
 export default function Suggestions() {
   const [recommends, setrecommends] = useState([]);
-  const { searchTerm, setuserinput ,display,setdisplay} = UserEntertedInput();
+  const { searchTerm,setsearchTerm, setuserinput ,display,setdisplay} = UserEntertedInput();
 
   let api = process.env.React_App_First_Search_Api;
   let engineoid = process.env.React_App_First_Search_Engine;
@@ -43,6 +43,7 @@ export default function Suggestions() {
                 <p
                   onClick={() => {
                     setuserinput(title);
+                    setsearchTerm(title)
                     setdisplay(false);
                   }}
                 >
