@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { UserEntertedInput } from "../Context/SearchContext";
 
-export default function Suggestions(props) {
+export default function Suggestions() {
   const [recommends, setrecommends] = useState([]);
-  const [display, setdisplay] = useState(false);
-  const { searchTerm, setuserinput } = UserEntertedInput();
+  const { searchTerm, setuserinput ,display,setdisplay} = UserEntertedInput();
 
   let api = process.env.React_App_First_Search_Api;
   let engineoid = process.env.React_App_First_Search_Engine;
   let rapidurl;
-  console.log("let check user input  ", searchTerm);
+
   useEffect(() => {
     if (searchTerm) {
-      // console.log("is it working of every typing")
       fetcheddata();
       async function fetcheddata() {
         rapidurl = `https://www.googleapis.com/customsearch/v1?key=${api}&cx=${engineoid}&q=${searchTerm}&start=1`;
@@ -25,6 +23,9 @@ export default function Suggestions(props) {
         }
       }
       setdisplay(true);
+    }
+    else{
+      setdisplay(false)
     }
   }, [searchTerm]);
 
