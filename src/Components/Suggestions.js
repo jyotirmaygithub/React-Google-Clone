@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { UserEntertedInput } from "../Context/SearchContext";
 
 export default function Suggestions() {
   const [recommends, setrecommends] = useState([]);
-  const { searchTerm,setsearchTerm, setuserinput ,display,setdisplay} = UserEntertedInput();
+  const { searchTerm, setsearchTerm, setuserinput, display, setdisplay } = UserEntertedInput();
+  const dropdownRef = useRef(null);
 
   let api = process.env.React_App_First_Search_Api;
   let engineoid = process.env.React_App_First_Search_Engine;
@@ -23,16 +24,27 @@ export default function Suggestions() {
         }
       }
       setdisplay(true);
+    } else {
+      setdisplay(false);
     }
-    else{
-      setdisplay(false)
-    }
+
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setdisplay(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, [searchTerm]);
 
   return (
     <>
       {display && (
-        <div className="fixed bg-white top-[52px] left-36 px-10 py-5 w-[50vw] z-10 border-b border-l border-r input-bar rounded">
+        <div ref={dropdownRef} className="fixed bg-white top-[52px] left-36 px-10 py-5 w-[50vw] z-10 border-b border-l border-r input-bar rounded">
           {recommends.map((e, index) => {
             let { title } = e;
             return (
@@ -43,7 +55,7 @@ export default function Suggestions() {
                 <p
                   onClick={() => {
                     setuserinput(title);
-                    setsearchTerm(title)
+                    setsearchTerm(title);
                     setdisplay(false);
                   }}
                 >
