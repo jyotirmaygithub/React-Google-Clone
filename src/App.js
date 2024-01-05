@@ -16,12 +16,10 @@ export default function App() {
     <div className="App">
       <Searchinputfun> 
           <Navbar />
-          {/* <Suggestions/> */}
-          
+          <Suggestions/>          
         <Router>
           <Category />
           <Routes>
-            {/* <Route exact path="/" element={<First/>}/> */}
             <Route exact path="/" element={<Links />} />
             <Route exact path="/images" element={<Imagedata />} />
             <Route exact path="/news" element={<News/>}/>

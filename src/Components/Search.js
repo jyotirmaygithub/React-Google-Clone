@@ -1,20 +1,24 @@
-import React,{useState} from 'react'
+import React from 'react'
 import {UserEntertedInput} from "../Context/SearchContext"
 
 
 export default function Search() {
-  const [writvalue,setwritevalue] = useState('')
-  const {setuserinput} = UserEntertedInput()
+  const {userinput,setuserinput,searchTerm ,setsearchTerm,setdisplay} = UserEntertedInput()
 
   function writesubmit(e){
     e.preventDefault()
-    setuserinput(writvalue)
+    setuserinput(searchTerm)
+    setdisplay(false)
+  }
+  function handleInputChange(e){
+    setsearchTerm(e.target.value);
+    setdisplay(true);
   }
   return (
     <>
     <div>
       <form onSubmit={writesubmit}>
-        <input value={writvalue } placeholder='Search or type URL' onChange={(e)=>setwritevalue(e.target.value)} className='fixed left-36 top-3 pl-3 p-[7px] w-[50vw] outline-none border-none rounded-full input-bar' type="search"  />
+        <input value={searchTerm} placeholder='Search or type URL' onChange={handleInputChange} className='fixed left-36 top-3 pl-3 p-[7px] w-[50vw] outline-none border-none rounded input-bar' type="search"  />
       </form>
     </div>
     </>

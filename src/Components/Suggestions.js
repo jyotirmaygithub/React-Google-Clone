@@ -1,52 +1,55 @@
 import React, { useState, useEffect } from "react";
 import { UserEntertedInput } from "../Context/SearchContext";
 
-export default function Suggestions(props) {
+export default function Suggestions() {
   const [recommends, setrecommends] = useState([]);
-  const [display, setdisplay] = useState(true);
-  const { userinput ,setuserinput } = UserEntertedInput();
-  let { suggest } = props;
+  const { searchTerm,setsearchTerm, setuserinput ,display,setdisplay} = UserEntertedInput();
 
-  let api = process.env.React_App_first_search_api;
-  let engineoid = process.env.React_App_first_search_engine;
+  let api = process.env.React_App_First_Search_Api;
+  let engineoid = process.env.React_App_First_Search_Engine;
   let rapidurl;
 
   useEffect(() => {
-    if (userinput) {
-      console.log("this one is working")
+    if (searchTerm) {
       fetcheddata();
       async function fetcheddata() {
-        rapidurl = `https://www.googleapis.com/customsearch/v1?key=${api}&cx=${engineoid}&q=${userinput}&start=1`;
-        console.log(rapidurl);
+        rapidurl = `https://www.googleapis.com/customsearch/v1?key=${api}&cx=${engineoid}&q=${searchTerm}&start=1`;
         try {
           let data = await fetch(rapidurl);
           let response = await data.json();
-          console.log(response);
           setrecommends(response.items);
-          console.log(response.items);
         } catch (error) {
           console.log("not able to fetch data");
         }
       }
+      setdisplay(true);
     }
-  }, [userinput]);
+    else{
+      setdisplay(false)
+    }
+  }, [searchTerm]);
 
   return (
     <>
       {display && (
-        <div className="suggestion-box">
+        <div className="fixed bg-white top-[52px] left-36 px-10 py-5 w-[50vw] z-10 border-b border-l border-r input-bar rounded">
           {recommends.map((e, index) => {
             let { title } = e;
             return (
-              <div className="suggestions" key={index}>
+              <div
+                className="cursor-pointer leading-[1.8] suggestions"
+                key={index}
+              >
                 <p
                   onClick={() => {
-                    setuserinput(title)
-                    setdisplay(false)
+                    setuserinput(title);
+                    setsearchTerm(title)
+                    setdisplay(false);
                   }}
                 >
                   {title}
                 </p>
+                <hr />
               </div>
             );
           })}

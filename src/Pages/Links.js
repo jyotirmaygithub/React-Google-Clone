@@ -71,7 +71,7 @@ export default function Links() {
           {dataarray.map((e, index) => {
             let { pagemap, formattedUrl, title, displayLink, snippet } = e;
             return (
-              <div key={index} className="my-10">
+              <div key={index} className="my-10 w-fit">
                {formattedUrl ? <Link className=" hover-link" target="_blank" to={formattedUrl}>
                   <div className="flex justify-center items-center space-x-2 link-box-of-site">
                     {pagemap && pagemap.metatags && pagemap.metatags[0] && pagemap.metatags[0]["og:image"] ? (
