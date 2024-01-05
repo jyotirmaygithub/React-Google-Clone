@@ -14,6 +14,7 @@ export default function Suggestions() {
     if (searchTerm) {
       fetcheddata();
       async function fetcheddata() {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         rapidurl = `https://www.googleapis.com/customsearch/v1?key=${api}&cx=${engineoid}&q=${searchTerm}&start=1`;
         try {
           let data = await fetch(rapidurl);
