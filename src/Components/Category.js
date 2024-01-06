@@ -6,6 +6,9 @@ export default function Category() {
     <>
     <div className='flex justify-start mt-24 items-center '>
       <Link className='link' to="/">
+        <li>homepagey</li>
+      </Link>
+      <Link className='link' to="/links">
         <li>🔍Links</li>
       </Link>
       <Link className='link' to="/images">
